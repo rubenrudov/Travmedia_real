@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1052728924066",
+    "project_id": "travmedia-prod",
+    "storage_bucket": "travmedia-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052728924066:android:0827952332ebbd6cae04fb",
+        "android_client_info": {
+          "package_name": "il.co.travmedia_real"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052728924066-1iehtq5ob5sbnhr8elvvd6abda4ksg25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqaHq8KuYyv7DOkabGevmlBzYky0Qub-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052728924066-1iehtq5ob5sbnhr8elvvd6abda4ksg25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
