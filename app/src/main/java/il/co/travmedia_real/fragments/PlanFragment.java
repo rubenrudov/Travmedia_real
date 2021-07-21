@@ -1,8 +1,6 @@
 package il.co.travmedia_real.fragments;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,15 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Objects;
-
 import il.co.travmedia_real.R;
 
-public class SeasonalFragment extends Fragment {
-
-    public SeasonalFragment() {
+public class PlanFragment extends Fragment {
+    public PlanFragment() {
 
     }
 
@@ -37,7 +30,7 @@ public class SeasonalFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle savedInstanceState){
         setHasOptionsMenu(true);
-        View view = layoutInflater.inflate(R.layout.fragment_seasonal, viewGroup, false);
+        View view = layoutInflater.inflate(R.layout.fragment_plan, viewGroup, false);
 
         return view;
     }
@@ -46,11 +39,11 @@ public class SeasonalFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.options_menu, menu);
-        menu.findItem(R.id.searchPost).setVisible(false);
         menu.findItem(R.id.newPost).setVisible(false);
+        menu.findItem(R.id.searchPost).setVisible(false);
+        menu.findItem(R.id.signOut).setVisible(false);
         menu.findItem(R.id.profileSettings).setVisible(true);
-        menu.findItem(R.id.signOut).setVisible(true);
-        menu.findItem(R.id.aboutUs).setVisible(true);
+        menu.findItem(R.id.aboutUs).setVisible(false);
     }
 
     @Override
@@ -59,19 +52,7 @@ public class SeasonalFragment extends Fragment {
 
         }
 
-        else if (item.getItemId() == R.id.signOut) {
-            FirebaseAuth.getInstance().signOut();
-            requireActivity().finish();
-        }
-
-
-        else if (item.getItemId() == R.id.aboutUs) {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://github.com/Travmedia-il/Travmedia-il"));
-            startActivity(intent);
-        }
 
         return super.onOptionsItemSelected(item);
     }
-
 }

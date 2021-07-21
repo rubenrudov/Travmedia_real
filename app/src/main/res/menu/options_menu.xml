@@ -18,6 +18,13 @@
         app:showAsAction="always"/>
 
     <item
+        android:id="@+id/aboutUs"
+        android:title="New post"
+        android:icon="@drawable/ic_info"
+        app:iconTint="@android:color/white"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/signOut"
         android:title="Sign out"
         android:icon="@drawable/logout"

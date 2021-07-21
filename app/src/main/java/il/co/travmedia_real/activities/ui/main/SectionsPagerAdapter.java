@@ -2,6 +2,7 @@ package il.co.travmedia_real.activities.ui.main;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
@@ -9,8 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import il.co.travmedia_real.R;
-import il.co.travmedia_real.fragments.EmergencyFragment;
-import il.co.travmedia_real.fragments.FeaturedFragment;
+import il.co.travmedia_real.fragments.PlanFragment;
 import il.co.travmedia_real.fragments.ForumsFragment;
 import il.co.travmedia_real.fragments.SeasonalFragment;
 
@@ -33,13 +33,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new SeasonalFragment();
+                return new PlanFragment();
             case 1:
-                return new FeaturedFragment();
+                return new SeasonalFragment();
             case 2:
                 return new ForumsFragment();
         }

@@ -2,6 +2,7 @@ package il.co.travmedia_real.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -123,6 +124,7 @@ public class ForumsFragment extends Fragment {
         inflater.inflate(R.menu.options_menu, menu);
         MenuItem signOut = menu.findItem(R.id.signOut);
         signOut.setVisible(false);
+        menu.findItem(R.id.aboutUs).setVisible(false);
 
         // TODO: Add search view for the recycler view
     }
