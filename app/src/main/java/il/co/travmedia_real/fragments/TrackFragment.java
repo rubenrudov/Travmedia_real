@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment;
 
 import il.co.travmedia_real.R;
 
-public class PlanFragment extends Fragment {
-    public PlanFragment() {
+public class TrackFragment extends Fragment {
+    public TrackFragment() {
 
     }
 
@@ -43,6 +43,14 @@ public class PlanFragment extends Fragment {
         menu.findItem(R.id.searchPost).setVisible(false);
         menu.findItem(R.id.signOut).setVisible(false);
         menu.findItem(R.id.profileSettings).setVisible(false);
-        menu.findItem(R.id.aboutUs).setVisible(false);
+        menu.findItem(R.id.aboutUs).setVisible(true);
     }
+
+    /**
+     * TODO:
+     *  1) Add google map
+     *  2) Add save button
+     *  3) Save city to database by last location
+     *  4) Refresh saved markers
+     */
 }

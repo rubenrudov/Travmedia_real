@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Travmedia</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="tab_text_1">Plan</string>
+    <string name="tab_text_1">Save Experiences</string>
     <string name="tab_text_2">Seasonal</string>
     <string name="tab_text_3">Forums</string>
     <string name="tab_text_4">Emergency</string>

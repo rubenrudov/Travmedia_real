@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import il.co.travmedia_real.R;
-import il.co.travmedia_real.fragments.PlanFragment;
+import il.co.travmedia_real.fragments.TrackFragment;
 import il.co.travmedia_real.fragments.ForumsFragment;
 import il.co.travmedia_real.fragments.SeasonalFragment;
 
@@ -38,7 +38,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new PlanFragment();
+                return new TrackFragment();
             case 1:
                 return new SeasonalFragment();
             case 2:
