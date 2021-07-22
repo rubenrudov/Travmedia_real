@@ -53,6 +53,7 @@ public class SeasonalFragment extends Fragment {
     };
 
     private String getSeason(Date date) {
+        // For later when there are enough trips for all the seasons
         return seasons[ date.getMonth() - 1];
     }
 

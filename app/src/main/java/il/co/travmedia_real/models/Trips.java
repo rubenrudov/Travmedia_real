@@ -73,24 +73,18 @@ public class Trips {
                             "Here you can find a super beautiful historical center that considered as a Unesco World Heritage Site\n\n" +
                             "Belem\n" +
                             "This place represents the Portuguese empire in its prime age, here you can visit in the Belem tower," +
-                            " Padrão dos Descobrimentos, and Jerónimos Monastery in which the famous explorer, Vasco de-Gama buried"
+                            " Monument for the Discoveries, and Jerónimos Monastery in which the famous explorer, Vasco de-Gama buried"
 
             );
         arrTemp[1] = t2;
 
         Trip t3 = new Trip(
                     "Azores",
-                    "https://firebasestorage.googleapis.com/v0/b/travmedia-prod.appspot.com/o/cyprus.jpg?alt=media&token=fe4b7e84-699f-4f21-a67d-38d9590ac852",
-                    "The most common attractions of this coast are the magical roads next to its" +
-                            "beautiful beaches and mounts but, there are a lot of places to visit and we'll tell you some of the most interesting" +
-                            "place to visit during your stay there\n\n" +
-                            "Ravello\n" +
-                            "A lovely town on a top of a mount that has a view of the Salerno bay, you can visit in Villa Rufolo and " +
-                            "visit some of the porcelain shops found there.\n\n" +
-                            "Amalfi\n" +
-                            "The road from Sorrento to Amalfi is considered to one of the most beautiful roads in the world" +
-                            " in the town itself you can by spending time and enjoy the markets that offer you nice Italian local food," +
-                            " going to the beautiful beaches and enjoy its pleasant water. and even take a ride on a boat to the Capri island"
+                    "https://firebasestorage.googleapis.com/v0/b/travmedia-prod.appspot.com/o/azores.jpg?alt=media&token=9943d4a4-9355-4369-8fc5-d5bd8d8257b7",
+                    "A group of 9 volcanic islands, one of the autonomous regions of Portugal that found in the middle of the atlantic ocean about 1400km from Lisboa" +
+                            " and about 3900km from U.S's east coast-\n\n" +
+                            "Sao Miguel island\n" +
+                            "Pico island\n"
 
             );
         arrTemp[2] = t3;
