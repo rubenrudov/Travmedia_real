@@ -34,11 +34,17 @@ public class MainActivity extends AppCompatActivity {
         toLogin.setOnClickListener((View v) -> {
             // Transfer the user to login page
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
         });
 
         toRegister.setOnClickListener((View v) -> {
             // Transfer the user to register page
             startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+            finish();
         });
+
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            toRegister.setVisibility(View.GONE);
+        }
     }
 }

@@ -39,20 +39,10 @@ public class PlanFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.options_menu, menu);
-        menu.findItem(R.id.newPost).setVisible(false);
+        menu.findItem(R.id.newPost).setVisible(true);
         menu.findItem(R.id.searchPost).setVisible(false);
         menu.findItem(R.id.signOut).setVisible(false);
-        menu.findItem(R.id.profileSettings).setVisible(true);
+        menu.findItem(R.id.profileSettings).setVisible(false);
         menu.findItem(R.id.aboutUs).setVisible(false);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.profileSettings) {
-
-        }
-
-
-        return super.onOptionsItemSelected(item);
     }
 }
