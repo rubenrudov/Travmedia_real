@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.inputmethod.EditorInfoCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,9 +24,10 @@ import il.co.travmedia_real.activities.NewPostActivity;
 import il.co.travmedia_real.activities.ProfileSettingsActivity;
 import il.co.travmedia_real.models.Post;
 import il.co.travmedia_real.models.PostsAdapter;
-
+import android.view.inputmethod.EditorInfo;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -126,7 +128,30 @@ public class ForumsFragment extends Fragment {
         signOut.setVisible(false);
         menu.findItem(R.id.aboutUs).setVisible(false);
 
-        // TODO: Add search view for the recycler view
+        MenuItem searchItem = menu.findItem(R.id.searchPost);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (query.length() == 0){
+                    getPosts();
+                }
+                
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String query) {
+                postsAdapter.getFilter().filter(query);
+
+                if (query.length() == 0){
+                    getPosts();
+                }
+
+                return false;
+            }
+        });
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override

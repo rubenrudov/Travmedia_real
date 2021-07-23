@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.TextView;
 import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
@@ -26,13 +27,14 @@ import il.co.travmedia_real.activities.ViewPostActivity;
 
 public class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.PostHolder> {
 
-    private ArrayList<Post> posts;
+    private ArrayList<Post> posts, postsDuplicate;
     private Context context;
-    final String[] profileImg = new String[]{"defaultImgUrl"};
+    private final String[] profileImg = new String[]{"defaultImgUrl"};
 
     public PostsAdapter(ArrayList<Post> posts, Context context) {
         this.posts = posts;
         this.context = context;
+        this.postsDuplicate = new ArrayList<>(posts);
     }
 
     @NonNull
@@ -99,5 +101,47 @@ public class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.PostHolder>
             title = itemView.findViewById(R.id.titleTv);
             author = itemView.findViewById(R.id.authorTv);
         }
+    }
+
+    public Filter getFilter() {
+        return filter;
+    }
+
+    private Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<Post> filtered = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0){
+                filtered.addAll(PostsAdapter.this.postsDuplicate);
+            }
+            else {
+                String pattern = constraint.toString().toLowerCase().trim();
+                for (Post post: PostsAdapter.this.posts) {
+                    if(post.getTitle().toLowerCase().contains(pattern) || post.getAuthor().toLowerCase().contains(pattern)){
+                        filtered.add(post);
+                    }
+                    else if (constraint.length() == 0){
+                        filtered.clear();
+                        filtered.addAll(PostsAdapter.this.postsDuplicate);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filtered;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            PostsAdapter.this.posts.clear();
+            PostsAdapter.this.posts.addAll((ArrayList<Post>) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
+    public void updateData(ArrayList<Post> posts) {
+        postsDuplicate.clear();
+        postsDuplicate.addAll(posts);
+        notifyDataSetChanged();
     }
 }
