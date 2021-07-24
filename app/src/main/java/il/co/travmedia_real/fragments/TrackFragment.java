@@ -1,6 +1,7 @@
 package il.co.travmedia_real.fragments;
 
 import android.annotation.SuppressLint;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,9 +14,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+
+import java.util.Objects;
+
 import il.co.travmedia_real.R;
 
+
+
 public class TrackFragment extends Fragment {
+
     public TrackFragment() {
 
     }
@@ -31,6 +42,7 @@ public class TrackFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle savedInstanceState){
         setHasOptionsMenu(true);
         View view = layoutInflater.inflate(R.layout.fragment_plan, viewGroup, false);
+
 
         return view;
     }

@@ -137,7 +137,7 @@ public class ForumsFragment extends Fragment {
                 if (query.length() == 0){
                     getPosts();
                 }
-                
+
                 return false;
             }
             @Override
@@ -151,6 +151,7 @@ public class ForumsFragment extends Fragment {
                 return false;
             }
         });
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -177,16 +178,5 @@ public class ForumsFragment extends Fragment {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(postsAdapter);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-//        if (postsAdapter != null && posts != null) {
-//            getPosts();
-//            postsAdapter = new PostsAdapter(posts, getContext());
-//            setRecycler();
-//        }
     }
 }

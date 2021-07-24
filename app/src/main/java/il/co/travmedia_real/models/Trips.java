@@ -52,7 +52,7 @@ public class Trips {
             );
         arrTemp[0] = t1;
         Trip t2 = new Trip(
-                    "Portugal - Lisbon",
+                    "Lisbon - Portugal",
                 "https://firebasestorage.googleapis.com/v0/b/travmedia-prod.appspot.com/o/saojorge.jpg?alt=media&token=ffa9642b-b41f-4b5e-a797-4ff1ae09f9d4",
                     "In Portugal there are a lot of locations you should visit and it could take more than a single vacation for it, in this" +
                             "trip I've collected some places I've been to at this time of the year that I can personally recommend you\n" +
@@ -79,10 +79,12 @@ public class Trips {
         arrTemp[1] = t2;
 
         Trip t3 = new Trip(
-                    "Azores",
+                    "Azores - Portugal",
                     "https://firebasestorage.googleapis.com/v0/b/travmedia-prod.appspot.com/o/azores.jpg?alt=media&token=9943d4a4-9355-4369-8fc5-d5bd8d8257b7",
                     "A group of 9 volcanic islands, one of the autonomous regions of Portugal that found in the middle of the atlantic ocean about 1400km from Lisboa" +
-                            " and about 3900km from U.S's east coast-\n\n" +
+                            " and about 3900km from U.S's east coast.\n" +
+                            "In this recommendation we'll cover 2 of the 9 islands that I personally consider as must to visit " +
+                            "islands here. You can also visit other islands, each island has its own views and special places.\n\n" +
                             "Sao Miguel island\n" +
                             "Pico island\n"
 
@@ -96,12 +98,15 @@ public class Trips {
         if (summerTrips != null) {
             return summerTrips;
         }
+
         else if (fallTrips != null) {
             return fallTrips;
         }
+
         else if (winterTrips != null) {
             return winterTrips;
         }
+
         else {
             return springTrips;
         }
